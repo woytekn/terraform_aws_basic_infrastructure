@@ -8,4 +8,38 @@ locals {
     owners = local.owners
     environment = local.environment
   }
-} 
+
+ multiple_instances = {
+    one = {
+      instance_type     = var.instance_type
+      user_data = file("${path.module}/app1-install.sh")
+      availability_zone = element(module.vpc.azs, 0)
+      subnet_id         = element(module.vpc.private_subnets, 0)
+      key_name = var.instance_keypair
+      vpc_security_group_ids = [module.private_sg.security_group_id]
+      root_block_device = [
+        {
+          encrypted   = true
+          volume_type = "gp3"
+          throughput  = 200
+          volume_size = 50
+        }
+      ]
+    }
+    two = {
+      instance_type     = var.instance_type
+      user_data = file("${path.module}/app1-install.sh")
+      availability_zone = element(module.vpc.azs, 1)
+      subnet_id         = element(module.vpc.private_subnets, 1)
+      key_name = var.instance_keypair
+      vpc_security_group_ids = [module.private_sg.security_group_id]
+      root_block_device = [
+        {
+          encrypted   = true
+          volume_type = "gp2"
+          volume_size = 50
+        }
+      ]
+    }
+  }
+}
