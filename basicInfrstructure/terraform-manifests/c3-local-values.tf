@@ -20,8 +20,7 @@ locals {
       root_block_device = [
         {
           encrypted   = true
-          volume_type = "gp3"
-          throughput  = 200
+          volume_type = "gp2"
           volume_size = 50
         }
       ]
