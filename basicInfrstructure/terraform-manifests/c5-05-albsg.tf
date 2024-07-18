@@ -12,7 +12,6 @@ module "alb_sg" {
     egress_rules = ["all-all"]
     tags = local.common_tags
 
-    # Open to CIDRs blocks (rule or from_port+to_port+protocol+description)
   ingress_with_cidr_blocks = [
     {
       from_port   = 81
