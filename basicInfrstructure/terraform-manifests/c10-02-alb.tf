@@ -9,7 +9,7 @@ module "alb" {
   subnets         = module.vpc.public_subnets
   security_groups = [module.alb_sg.security_group_id]
 
-  enable_deletion_protection = false
+  enable_deletion_protection = false  
   tags = local.common_tags
 
 
