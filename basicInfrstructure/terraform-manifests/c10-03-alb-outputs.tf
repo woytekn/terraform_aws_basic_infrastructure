@@ -6,6 +6,29 @@ output "id" {
   value       = module.alb.id
 }
 
+output "arn" {
+  description = "The ARN of the load balancer"
+  value       = module.alb.arn
+}
+
+output "lb_https_listener_arn" {
+  value = aws_lb_listener.https_listener.arn
+}
+
+output "lb_http_listener_arn" {
+  value = aws_lb_listener.http_listener.arn
+}
+
+output lb_dns_name {
+  description = "The DNS name of the load balancer"
+  value       = module.alb.dns_name
+}
+
+output "lb_zone_id" { 
+  description = "The zone ID of the load balancer"
+  value       = module.alb.zone_id  
+}
+
 # Listener 
 output "listeners" {
   description = "Map of listeners created and their attributes"

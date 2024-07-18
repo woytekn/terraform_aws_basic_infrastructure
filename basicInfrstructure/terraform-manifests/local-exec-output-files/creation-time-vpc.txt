@@ -1,0 +1,4 @@
+VPC create on Thu Jul 18 13:36:21 CEST 2024 and VPC id: vpc-0cd0c0c28d1f0fd64
+VPC create on Thu Jul 18 14:21:18 CEST 2024 and VPC id: vpc-0b02b62cb6fc0bedf
+VPC create on Thu Jul 18 14:37:06 CEST 2024 and VPC id: vpc-093621e982039d5e9
+VPC create on Thu Jul 18 15:44:23 CEST 2024 and VPC id: vpc-0f80e737e31fe1fed

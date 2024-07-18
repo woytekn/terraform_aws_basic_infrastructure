@@ -1,9 +1,9 @@
-module "ec2_private_instance" {
+module "ec2_private_instance_app2" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "5.6.1"
   depends_on = [ module.vpc ]
 
-  for_each = local.multiple_instances
+  for_each = local.multiple_instances_app2
 
   name = "${var.environment}-private-instance-${each.key}"
 
