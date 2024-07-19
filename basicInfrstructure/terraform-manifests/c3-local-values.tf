@@ -18,7 +18,7 @@ locals {
       root_block_device = [
         {
           encrypted   = true
-          volume_type = "gp2"
+          volume_type = "gp3"
           volume_size = 50
         }
       ]
@@ -33,8 +33,8 @@ locals {
       root_block_device = [
         {
           encrypted   = true
-          volume_type = "gp2"
-          volume_size = 50
+          volume_type = "gp3"
+          volume_size = 8
         }
       ]
     }
@@ -52,7 +52,7 @@ locals {
         {
           encrypted   = true
           volume_type = "gp2"
-          volume_size = 50
+          volume_size = 8
         }
       ]
     }
