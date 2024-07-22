@@ -90,8 +90,11 @@ resource "aws_lb_listener_rule" "app1_rule" {
   }
 
   condition {
-    path_pattern {
-      values = ["/app1*"]
+    # path_pattern {
+    #   values = ["/app1*"]
+    # }
+    host_header {
+      values = [var.app1_dns_name]
     }
   }
 }
@@ -106,10 +109,15 @@ resource "aws_lb_listener_rule" "app2_rule" {
   }
 
   condition {
-    path_pattern {
-      values = ["/app2*"]
-    }
+    // Path patern
+    # path_pattern {
+    #   values = ["/app2*"]
+    # }
+    // Host hader pattern
+    host_header {
+      values = [var.app2_dns_name]
   }
+ }
 }
 
 resource "aws_lb_listener" "http_listener" {
